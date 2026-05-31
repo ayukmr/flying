@@ -33,10 +33,10 @@ let v2 = dir * Math.sqrt(Math.max(0, velo(r2)**2 - l**2/r2**2)); // same startin
 
 const dt = fns[fn].dt;
 
-const cx = 1000;
-const cy = 1000;
+const cx = 750;
+const cy = 750;
 
-new Canvas('#c1', 2000, 2000, function () {
+new Canvas('#c1', 1500, 1500, function () {
   for (let i = 0; i < 100; i++) {
     th1 += l/r1**2 * dt;
     th2 += l/r2**2 * dt;
@@ -73,7 +73,7 @@ new Canvas('#c1', 2000, 2000, function () {
   this.point(cx, cy, '#22c55e');
 });
 
-new Canvas('#c2', 2000, 2000, function () {
+new Canvas('#c2', 1500, 1500, function () {
   this.ctx.fillStyle = '#0002';
   this.ctx.fillRect(0, 0, this.width, this.height);
 
@@ -91,11 +91,11 @@ new Canvas('#c2', 2000, 2000, function () {
 });
 
 const cy2 = 125;
-const rx = 3500;
+const rx = 2500;
 
 let p1, p2, p3, p4;
 
-new Canvas('#s1', 4060, 250, function () {
+new Canvas('#s1', 3060, 250, function () {
   const n1 = dir * Math.sqrt(velo(r1)**2 - l**2/r1**2) / 2 + cy2;
 
   if (p1 !== undefined) this.line([rx - 4, p1], [rx, n1], '#0ea5e9', 12);
@@ -103,7 +103,7 @@ new Canvas('#s1', 4060, 250, function () {
   p1 = n1;
 }, true);
 
-new Canvas('#s2', 4060, 250, function () {
+new Canvas('#s2', 3060, 250, function () {
   const n2 = v2 / 2 + cy2;
 
   if (p2 !== undefined) this.line([rx - 4, p2], [rx, n2], '#3b82f6', 12);
@@ -111,7 +111,7 @@ new Canvas('#s2', 4060, 250, function () {
   p2 = n2;
 }, true);
 
-new Canvas('#s3', 4060, 250, function () {
+new Canvas('#s3', 3060, 250, function () {
   const n3 = r2 / 16 + cy2;
   const n4 = F(r2) * 10 + cy2;
 
