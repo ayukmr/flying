@@ -97,7 +97,7 @@ new Canvas('#c2', 2000, 2000, function () {
 const cy2 = 125;
 const rx = 3500;
 
-let p1, p2, p3, p4;
+let p1, p2, p3, p4, p5;
 
 new Canvas('#s1', 4060, 250, function () {
   const n1 = dir * Math.sqrt(velo(r1)**2 - l**2/r1**2) / 2 + cy2;
@@ -124,4 +124,17 @@ new Canvas('#s3', 4060, 250, function () {
 
   p3 = n3;
   p4 = n4;
+}, true);
+
+new Canvas('#s4', 4060, 250, function () {
+  const n5 = th2 % (2 * Math.PI);
+
+  if (p5 !== undefined) {
+    if (Math.abs(n5 - p5) > Math.PI) p5 = n5;
+
+    const m = this.height / (2 * Math.PI);
+    this.line([rx - 4, p5 * m], [rx, n5 * m], '#8b5cf6', 16);
+  }
+
+  p5 = n5;
 }, true);
