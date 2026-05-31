@@ -1,0 +1,27 @@
+main {
+  width: fit-content;
+  margin: 50px auto;
+}
+
+canvas {
+  background: #000000;
+}
+
+section, header {
+  margin-bottom: 10px;
+}
+
+section {
+  display: flex;
+  gap: 20px;
+}
+
+h3 {
+  margin: 0;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}

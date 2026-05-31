@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Formation Flying</title>
+
+        <link href="https://raven.ayukmr.com/raven.css" rel="stylesheet">
+        <link href="styles/styles.css" rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/contrib/auto-render.min.js" defer></script>
+
+        <script type="module" src="src/main.js" defer></script>
+    </head>
+
+    <body>
+        <main>
+            <header>
+                <h2>Sim</h2>
+            </header>
+
+            <section>
+                <div>
+                    <label>Function</label>
+                    <select id="fn"></select>
+                </div>
+
+                <div>
+                    <label>$\Delta t$</label>
+                    <span id="dt"></span>
+                </div>
+            </section>
+
+            <section>
+                <div>
+                    <div class="label">
+                        <h3>Velocity-based (solving)</h3>
+                        <span>
+                            <span style="color: #0ea5e9">$v$</span>
+                            $,$
+                            <span id="intF"></span>
+                        </span>
+                    </div>
+                    <canvas id="c1"></canvas>
+                </div>
+
+                <div>
+                    <div class="label">
+                        <h3>Acceleration-based (numeric)</h3>
+                        <span>
+                            <span style="color: #3b82f6">$v$</span>
+                            $,$
+                            <span id="F" style="color: #f97316"></span>
+                        </span>
+                    </div>
+                    <canvas id="c2"></canvas>
+                </div>
+            </section>
+
+            <section style="flex-direction: column">
+                <div>
+                    <h3>Velo-based <span style="color: #0ea5e9">$v$</span></h3>
+                    <canvas id="s1"></canvas>
+                </div>
+                <div>
+                    <h3>Accel-based <span style="color: #3b82f6">$v$</span></h3>
+                    <canvas id="s2"></canvas>
+                </div>
+                <div>
+                    <h3><span style="color: #22c55e">$r$</span> and <span style="color: #f97316">$F(r)$</span></h3>
+                    <canvas id="s3"></canvas>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
