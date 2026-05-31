@@ -26,25 +26,38 @@ class Canvas {
       this.ctx.drawImage(this.canvas, -4, 0);
       this.ctx.clearRect(this.width - 4, 0, 4, this.height);
     }
+
     this.draw.call(this, tm);
     this.frameID = requestAnimationFrame((tm) => this.animate(tm));
   }
 
-  point(x, y, color, r=16) {
+  point(x, y, color) {
     this.ctx.fillStyle = color;
     this.ctx.beginPath();
-    this.ctx.arc(x, y, r, 0, Math.PI * 2);
+    this.ctx.arc(x, y, 20, 0, Math.PI * 2);
     this.ctx.fill();
   }
 
-  line(p0, p1, color, width=8) {
+  line(p0, p1, color, width=12) {
     this.ctx.strokeStyle = color;
     this.ctx.lineWidth = width;
+    this.ctx.lineCap = 'round';
 
     this.ctx.beginPath();
     this.ctx.moveTo(p0[0], p0[1]);
     this.ctx.lineTo(p1[0], p1[1]);
     this.ctx.stroke();
+  }
+
+  arrow(p0, p1, color) {
+    const [x0, y0] = p0;
+    const [x1, y1] = p1;
+
+    const angle = Math.atan2(y1 - y0, x1 - x0);
+
+    this.line(p0, p1, color);
+    this.line(p1, [x1 - 30 * Math.cos(angle - Math.PI / 6), y1 - 30 * Math.sin(angle - Math.PI / 6)], '#3b82f6');
+    this.line(p1, [x1 - 30 * Math.cos(angle + Math.PI / 6), y1 - 30 * Math.sin(angle + Math.PI / 6)], '#3b82f6');
   }
 
   rect(x, y, w, h, color) {

@@ -56,7 +56,7 @@ new Canvas('#c1', 2000, 2000, function () {
     r2 += v2 * dt;
   }
 
-  this.ctx.fillStyle = '#0002';
+  this.ctx.fillStyle = '#0004';
   this.ctx.fillRect(0, 0, this.width, this.height);
 
   const x = cx + r1 * Math.cos(th1) / 2;
@@ -67,14 +67,14 @@ new Canvas('#c1', 2000, 2000, function () {
   const xv = x + Math.cos(th1) * vv * 10 / 2;
   const yv = y + Math.sin(th1) * vv * 10 / 2;
 
-  this.line([x, y], [xv, yv], '#0ea5e9');
+  this.arrow([x, y], [xv, yv], '#0ea5e9');
 
   this.point(x, y, '#ef4444');
   this.point(cx, cy, '#22c55e');
 });
 
 new Canvas('#c2', 2000, 2000, function () {
-  this.ctx.fillStyle = '#0002';
+  this.ctx.fillStyle = '#0004';
   this.ctx.fillRect(0, 0, this.width, this.height);
 
   const x = cx + r2 * Math.cos(th2) / 2;
@@ -83,8 +83,12 @@ new Canvas('#c2', 2000, 2000, function () {
   const x2 = x + Math.cos(th2) * v2 * 10 / 2;
   const y2 = y + Math.sin(th2) * v2 * 10 / 2;
 
-  this.line([x, y], [x2, y2], '#3b82f6');
-  this.line([x, y], [x + Math.cos(th2) * F(r2) * -30, y + Math.sin(th2) * F(r2) * -30], '#f97316', 16);
+  this.arrow([x, y], [x2, y2], '#3b82f6');
+
+  const x3 = x + Math.cos(th2) * F(r2) * -30;
+  const y3 = y + Math.sin(th2) * F(r2) * -30;
+
+  this.line([x, y], [x3, y3], '#f97316', 20);
 
   this.point(x, y, '#ef4444');
   this.point(cx, cy, '#22c55e');
