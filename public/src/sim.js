@@ -129,9 +129,7 @@ new Canvas('#s3', 4060, 250, function () {
 new Canvas('#s4', 4060, 250, function () {
   const n5 = th2 % (2 * Math.PI);
 
-  if (p5 !== undefined) {
-    if (Math.abs(n5 - p5) > Math.PI) p5 = n5;
-
+  if (p5 !== undefined && Math.abs(n5 - p5) < Math.PI) {
     const m = this.height / (2 * Math.PI);
     this.line([rx - 4, p5 * m], [rx, n5 * m], '#8b5cf6', 16);
   }
