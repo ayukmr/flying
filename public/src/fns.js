@@ -3,7 +3,7 @@ const fns = {
   zero: {
     F: () => 0,
     intF: () => 0,
-    dt: 0.02,
+    dt: 0.01,
     latex: {
       F: '0',
       intF: '0'
@@ -12,7 +12,7 @@ const fns = {
   sin: {
     F: (r) => 10 * Math.sin(r / 200),
     intF: (r) => -10 * 200 * Math.cos(r / 200),
-    dt: 0.005,
+    dt: 0.0025,
     latex: {
       F: '10 \\sin(\\frac{r}{200})',
       intF: '-10 \\cdot 200 \\cdot \\cos(\\frac{r}{200})'
@@ -21,7 +21,7 @@ const fns = {
   'inv cube': {
     F: (r) => 2e7 / r**3,
     intF: (r) => -1e7 / r**2,
-    dt: 0.02,
+    dt: 0.01,
     latex: {
       F: '\\frac{2 \\cdot 10^7}{r^3}',
       intF: '\\frac{-1 \\cdot 10^7}{r^2}'
@@ -30,7 +30,7 @@ const fns = {
   cos: {
     F: (r) => 10 * Math.cos(r / 200),
     intF: (r) => 10 * 200 * Math.sin(r / 200),
-    dt: 0.005,
+    dt: 0.0025,
     latex: {
       F: '10 \\cos(\\frac{r}{200})',
       intF: '10 \\cdot 200 \\cdot \\sin(\\frac{r}{200})'
@@ -39,7 +39,7 @@ const fns = {
   constant: {
     F: () => -10,
     intF: (r) => -10 * r,
-    dt: 0.0025,
+    dt: 0.00125,
     latex: {
       F: '-10',
       intF: '-10r'
@@ -48,7 +48,7 @@ const fns = {
   spring: {
     F: (r) => -0.05 * r,
     intF: (r) => -0.025 * r**2,
-    dt: 0.0025,
+    dt: 0.00125,
     latex: {
       F: '-0.05r',
       intF: '-0.025r^2'
