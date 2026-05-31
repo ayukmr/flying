@@ -53,11 +53,14 @@ class Canvas {
     const [x0, y0] = p0;
     const [x1, y1] = p1;
 
+    const mag = Math.log(Math.hypot(x1 - x0, y1 - y0));
     const angle = Math.atan2(y1 - y0, x1 - x0);
 
+    const m = 6 * Math.max(0, mag);
+
     this.line(p0, p1, color);
-    this.line(p1, [x1 - 30 * Math.cos(angle - Math.PI / 6), y1 - 30 * Math.sin(angle - Math.PI / 6)], '#3b82f6');
-    this.line(p1, [x1 - 30 * Math.cos(angle + Math.PI / 6), y1 - 30 * Math.sin(angle + Math.PI / 6)], '#3b82f6');
+    this.line(p1, [x1 - m * Math.cos(angle - Math.PI / 6), y1 - m * Math.sin(angle - Math.PI / 6)], '#3b82f6');
+    this.line(p1, [x1 - m * Math.cos(angle + Math.PI / 6), y1 - m * Math.sin(angle + Math.PI / 6)], '#3b82f6');
   }
 
   rect(x, y, w, h, color) {
