@@ -5,8 +5,8 @@ class Canvas {
     this.canvas.width = this.width = width;
     this.canvas.height = this.height = height;
 
-    this.canvas.style.width = `${width / 3}px`;
-    this.canvas.style.height =`${height / 3}px`;
+    this.canvas.style.width = `${width / 4}px`;
+    this.canvas.style.height =`${height / 4}px`;
 
     this.ctx = this.canvas.getContext('2d');
     this.draw = draw;
