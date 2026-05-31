@@ -59,8 +59,8 @@ class Canvas {
     const m = 6 * Math.max(0, mag);
 
     this.line(p0, p1, color);
-    this.line(p1, [x1 - m * Math.cos(angle - Math.PI / 6), y1 - m * Math.sin(angle - Math.PI / 6)], '#3b82f6');
-    this.line(p1, [x1 - m * Math.cos(angle + Math.PI / 6), y1 - m * Math.sin(angle + Math.PI / 6)], '#3b82f6');
+    this.line(p1, [x1 - m * Math.cos(angle - Math.PI / 6), y1 - m * Math.sin(angle - Math.PI / 6)], color);
+    this.line(p1, [x1 - m * Math.cos(angle + Math.PI / 6), y1 - m * Math.sin(angle + Math.PI / 6)], color);
   }
 
   rect(x, y, w, h, color) {
