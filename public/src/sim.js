@@ -44,17 +44,15 @@ new Canvas('#c1', 2000, 2000, function () {
     th1 += l/r1**2 * dt;
     th2 += l/r2**2 * dt;
 
-    v2 += accel(r2) * dt;
-
-    let x = veloSq(r1);
-
-    if (x < 0) {
+    let vSq = veloSq(r1);
+    if (vSq < 0) {
       // overshot, turn back
       dir = -dir;
-      x = -x;
+      vSq = -vSq;
     }
-    r1 += dir * Math.sqrt(x) * dt;
+    r1 += dir * Math.sqrt(vSq) * dt;
 
+    v2 += accel(r2) * dt;
     r2 += v2 * dt;
   }
 
